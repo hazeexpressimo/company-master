@@ -1,0 +1,51 @@
+body {
+    background-image: url("https://i.ibb.co/54z1p8R/2.jpg");
+}
+th {
+    padding-right: 50px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.form__line {
+    padding: 8px;
+    display: flex;
+    /*justify-content: flex-end;*/
+}
+
+.form__line > label {
+    padding: 8px 16px 8px 0;
+}
+
+.form__line > input {
+    padding: 8px;
+}
+
+.form__line > button {
+    padding: 8px;
+    margin-left: 10px;
+    /*width: auto;*/
+    border-radius: 5px;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#d1d1d1), to(#afafaf));
+    background: -moz-linear-gradient(#d1d1d1, #afafaf);
+    background: linear-gradient(#dcdcdca3, #afafaf00);
+    border: solid 1px #868686;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+}
+.ui-button {
+    display: inline-block;
+    font-size: 15px;
+    font: revert;
+    font-size: medium;
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    user-select: none;
+    padding: .2em 1.2em;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    background: rgb(245, 245, 245) linear-gradient(#f4f4f4, #f1f1f1);
+    transition: all .218s ease 0s;
+}

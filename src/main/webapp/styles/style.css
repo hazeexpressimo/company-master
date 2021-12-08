@@ -1,0 +1,163 @@
+body {
+    background-image: url("https://i.ibb.co/54z1p8R/2.jpg");
+    padding-top: 150px;
+    text-align: center;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.6);
+    font-variant-caps: all-petite-caps;
+    font-family: sans-serif;
+    text-shadow: 0px 2px 3px #666;
+
+}
+.statistic-button {
+    width: 1000px;
+}
+
+.form__wrapper {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #53545426;
+    font-size: 16px;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.form__line {
+    padding: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form__line > label {
+    padding: 8px 16px 8px 0;
+}
+
+.form__line > input {
+    padding: 8px;
+}
+
+.form__line > button {
+    padding: 8px;
+    margin-left: 10px;
+    /*width: auto;*/
+    border-radius: 5px;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#d1d1d1), to(#afafaf));
+    background: -moz-linear-gradient(#d1d1d1, #afafaf);
+    background: linear-gradient(#d8d5d500, #c0c0c0c7);
+    border: solid 1px #b4b4b4;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+}
+
+form {
+    display: inline-flex;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+
+.ui-button {
+    display: inline-block;
+    font-size: 15px;
+    font: revert;
+    font-size: medium;
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    user-select: none;
+    padding: .2em 1.2em;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    background: rgb(245, 245, 245) linear-gradient(#f4f4f4, #f1f1f1);
+    transition: all .218s ease 0s;
+}
+
+.ui-button:hover {
+    color: rgb(24, 24, 24);
+    border: 1px solid rgb(198, 198, 198);
+    background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.ui-button:active {
+    color: rgb(51, 51, 51);
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(238, 238, 238) linear-gradient(rgb(238, 238, 238), rgb(224, 224, 224));
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1) inset;
+}
+
+.ui-button:checked {
+    color: dodgerblue;
+}
+
+.form1 {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.ui-select {
+    padding: 7px;
+    border: 2px solid #bdb8b8;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    max-height: 33px;
+}
+
+.form_changer {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #bdb8b8;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    max-height: 10px;
+}
+.menu {
+    padding-right: 55px;
+}
+.ui-button-submit {
+    display: inline-block;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    user-select: none;
+    padding: .2em 1.2em;
+    outline: none;
+    border: 1px solid #60615657;
+    border-radius: 5px;
+    background: rgb(245, 245, 245) linear-gradient(#f4f4f4, #f1f1f1);
+    transition: all .218s ease 0s;
+    height: 35px;
+}
+.ui-button-submit:hover {
+    color: rgb(24, 24, 24);
+    border: 1px solid rgb(198, 198, 198);
+    background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
