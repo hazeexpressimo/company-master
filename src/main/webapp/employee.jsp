@@ -8,7 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<link href="styles/styleDepartment.css" rel="stylesheet" type="text/css">
+<link href="styles/styleInfo.css" rel="stylesheet" type="text/css">
 <script src="js/script.js"></script>
 <link rel="icon" type="image/x-icon" href="https://trackensure.com/images/favicon.png">
 <head>
@@ -25,6 +25,7 @@
         <th>Департамент</th>
         <th>Начало рабочего времени</th>
         <th>Конец рабочего времени</th>
+        <th>Рабочее время совпадает с предпочтением сотрудника</th>
     </tr>
     </thead>
     <tbody>
@@ -36,6 +37,10 @@
             <td>${e.departmentName}</td>
             <td>${e.startTime}</td>
             <td>${e.endTime}</td>
+            <td><c:choose>
+                <c:when test="${not e.preference}">Нет</c:when>
+                <c:otherwise>Да</c:otherwise>
+            </c:choose> </td>
         </tr>
     </c:forEach>
     </tbody>

@@ -17,6 +17,12 @@ public class Department {
         this.floor = floor;
     }
 
+    public Department(int id, LocalTime startTime, LocalTime endTime) {
+        this.id = id;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
     public Department() {
     }
 

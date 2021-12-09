@@ -19,15 +19,16 @@ public class EmployeeDAO {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(SqlRequest.FIND_ALL_EMPLOYEE);
             while (rs.next()) {
-                //int employeeId = rs.getInt("id");
+                int employeeId = rs.getInt("id");
                 String firstname = rs.getString("firstname");
                 String lastname = rs.getString("lastname");
                 Date dateOfBirth = rs.getDate("birthdate");
-                int departmentId = rs.getInt("departmentId");
+                int departmentId = rs.getInt("department_id");
                 String departmentName = rs.getString("department");
-                LocalTime startTime = LocalTime.parse(rs.getString("startTime"));
-                LocalTime endTime = LocalTime.parse(rs.getString("endTime"));
-                Employee employee = new Employee(firstname, lastname, dateOfBirth, departmentId, departmentName, startTime, endTime);
+                LocalTime startTime = LocalTime.parse(rs.getString("start_time"));
+                LocalTime endTime = LocalTime.parse(rs.getString("end_time"));
+                boolean preference = rs.getBoolean("preference");
+                Employee employee = new Employee(employeeId, firstname, lastname, dateOfBirth, departmentId, departmentName, startTime, endTime, preference);
                 result.add(employee);
             }
         } catch (SQLException throwables) {
@@ -45,6 +46,17 @@ public class EmployeeDAO {
         preparedStatement.setInt(4, employee.getDepartmentId());
         preparedStatement.setTime(5, Time.valueOf(employee.getStartTime()));
         preparedStatement.setTime(6, Time.valueOf(employee.getEndTime()));
+        preparedStatement.setBoolean(7, employee.isPreference());
+        preparedStatement.executeUpdate();
+    }
+
+    public void changeScheduleEmployee(Employee employee) throws SQLException {
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(SqlRequest.CHANGE_SCHEDULE_EMPLOYEE);
+        preparedStatement.setTime(1, Time.valueOf(employee.getStartTime()));
+        preparedStatement.setTime(2, Time.valueOf(employee.getEndTime()));
+        preparedStatement.setBoolean(3, employee.isPreference());
+        preparedStatement.setInt(4, employee.getId());
         preparedStatement.executeUpdate();
     }
 }

@@ -8,7 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<link href="styles/styleDepartment.css" rel="stylesheet" type="text/css">
+<link href="styles/styleInfo.css" rel="stylesheet" type="text/css">
 <script src="js/script.js"></script>
 <link rel="icon" type="image/x-icon" href="https://trackensure.com/images/favicon.png">
 <head>
@@ -23,6 +23,7 @@
         <th>Имя департамента</th>
         <th>Начало рабочего времени</th>
         <th>Конец рабочего времени</th>
+        <th>Этаж</th>
     </tr>
     </thead>
     <tbody>
@@ -32,6 +33,7 @@
             <td>${d.name}</td>
             <td>${d.startTime}</td>
             <td>${d.endTime}</td>
+            <td>${d.floor}</td>
         </tr>
     </c:forEach>
     </tbody>

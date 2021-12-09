@@ -12,8 +12,10 @@ public class Employee {
     private String departmentName;
     private LocalTime startTime;
     private LocalTime endTime;
+    private boolean preference;
 
-    public Employee(String firstName, String lastName, Date dateOfBirth, int departmentId, String departmentName, LocalTime startTime, LocalTime endTime) {
+    public Employee(int id, String firstName, String lastName, Date dateOfBirth, int departmentId, String departmentName, LocalTime startTime, LocalTime endTime, boolean preference) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -21,10 +23,45 @@ public class Employee {
         this.departmentName = departmentName;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.preference = preference;
+    }
+
+    public Employee(String firstName, String lastName, Date dateOfBirth, int departmentId, String departmentName, LocalTime startTime, LocalTime endTime, boolean preference) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.departmentId = departmentId;
+        this.departmentName = departmentName;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.preference = preference;
+    }
+
+    public Employee(int id, LocalTime startTime, LocalTime endTime, boolean preference) {
+        this.id = id;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.preference = preference;
     }
 
     public Employee() {
 
+    }
+
+    public boolean isPreference() {
+        return preference;
+    }
+
+    public void setPreference(boolean preference) {
+        this.preference = preference;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public LocalTime getStartTime() {

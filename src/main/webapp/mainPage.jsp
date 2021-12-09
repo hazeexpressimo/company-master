@@ -135,11 +135,17 @@
                 <br>
                 <input type="time" id="endTimeEmp" name="endTimeEmp" required>
             </div>
+            <div class="form_changer">
+                <label>Является ли выбранное время <br>предпочтением сотрудника?</label>
+                <br>
+                <input class="radio" type="radio" name="preferenceEmp" value="true" required>Да
+                <input class="radio" type="radio" name="preferenceEmp"  value="false" required>Нет
+            </div>
             <button type="submit" class="ui-button-submit">Отправить</button>
         </form>
     </div>
     <div id="setDep" class="form1" style="display: none">
-        <form>
+        <form method="post" action="changeScheduleDepartment">
             <div class="form_changer">
                 <label>Выберите департамент:</label>
                 <select class="ui-select" id="selectDepForChange" name="chooseDepNameInChangeMenu" required>
@@ -160,12 +166,12 @@
         </form>
     </div>
     <div id="setEmp" class="form1" style="display: none">
-        <form>
+        <form method="post", action="changeScheduleEmployee">
             <div class="form_changer">
                 <label>Выберите сотрудника:</label>
                 <select class="ui-select" id="selectEmpForChange" name="chooseEmpNameInChangeMenu" required>
                     <c:forEach items="${empbean.employees}" var="e">
-                        <option value=${e.firstName}>${e.firstName} ${e.lastName}</option>
+                        <option value=${e.id}>${e.firstName} ${e.lastName}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -176,6 +182,12 @@
             <div class="form_changer">
                 <label for="timeStartEmpChange">Время окончания рабочего дня:</label>
                 <input type="time" id="timeEndEmpChange" name="changeEndTimeEmpReq" required>
+            </div>
+            <div class="form_changer">
+                <label>Является ли выбранное время <br>предпочтением сотрудника?</label>
+                <br>
+                <input class="radio" type="radio" name="preferenceEmp1" value="true" required>Да
+                <input class="radio" type="radio" name="preferenceEmp1"  value="false" required>Нет
             </div>
             <button type="submit" class="ui-button-submit">Отправить</button>
         </form>

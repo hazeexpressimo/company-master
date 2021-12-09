@@ -5,13 +5,9 @@ import com.example.company.dbConnection.ConnectionManager;
 import com.example.company.dbConnection.SqlRequest;
 
 import java.sql.*;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +27,8 @@ public class DepartmentDAO {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                LocalTime startTime = LocalTime.parse(rs.getString("startTime"));
-                LocalTime endTime = LocalTime.parse(rs.getString("endTime"));
+                LocalTime startTime = LocalTime.parse(rs.getString("start_time"));
+                LocalTime endTime = LocalTime.parse(rs.getString("end_time"));
                 int floor = rs.getInt("floor");
                 Department department = new Department(id, name, startTime, endTime, floor);
                 result.add(department);
@@ -50,6 +46,15 @@ public class DepartmentDAO {
         preparedStatement.setTime(2, Time.valueOf(department.getStartTime()));
         preparedStatement.setTime(3, Time.valueOf(department.getEndTime()));
         preparedStatement.setInt(4, department.getFloor());
+        preparedStatement.executeUpdate();
+    }
+
+    public void changeScheduleDepartment(Department department) throws SQLException {
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(SqlRequest.CHANGE_SCHEDULE_DEPARTMENT);
+        preparedStatement.setTime(1, Time.valueOf(department.getStartTime()));
+        preparedStatement.setTime(2, Time.valueOf(department.getEndTime()));
+        preparedStatement.setInt(3, department.getId());
         preparedStatement.executeUpdate();
     }
 }
